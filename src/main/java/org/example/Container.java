@@ -6,13 +6,13 @@ public class Container<E> {
     private Node<E> mTail;
 
     public Container() {
-        mHead = new Node<E>(null, null, null);
+        mHead = new Node<E>(null, null);
         mTail = mHead;
     }
 
     public Container(int size) {
         mSize = size;
-        mHead = new Node<E>(null, null, null);
+        mHead = new Node<E>(null, null);
         mTail = mHead;
 
         for (int i = 0; i < mSize; ++i) {
@@ -71,7 +71,7 @@ public class Container<E> {
      * @return {@code true} if this element inserted into this list
      */
     public boolean add(E e) {
-        Node<E> node = new Node<E>(e, mTail, null);
+        Node<E> node = new Node<E>(e, null);
         mTail.setNext(node);
         mTail = node;
 
@@ -196,7 +196,7 @@ public class Container<E> {
             temp = temp.getNext();
         }
 
-        Node<E> newNode = new Node<E>(element, null, temp.getNext());
+        Node<E> newNode = new Node<E>(element, temp.getNext());
 
         temp.setNext(newNode);
 

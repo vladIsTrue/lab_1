@@ -7,12 +7,10 @@ public class Node<E> {
 
     public Node(E value) {
         mNext = null;
-        mPrevious = null;
         mValue = value;
     }
-    public Node(E value, Node previous, Node next) {
+    public Node(E value, Node next) {
         mNext = next;
-        mPrevious = previous;
         mValue = value;
     }
 
@@ -22,14 +20,6 @@ public class Node<E> {
 
     public void setNext(Node next) {
         mNext = next;
-    }
-
-    public Node getPrevious() {
-        return mPrevious;
-    }
-
-    public void setPrevious(Node previous) {
-        mPrevious = previous;
     }
 
     public E getValue() {
